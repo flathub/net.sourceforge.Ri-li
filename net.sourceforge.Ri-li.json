@@ -1,7 +1,7 @@
 {
     "app-id": "net.sourceforge.Ri-li",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "23.08",
+    "runtime-version": "25.08",
     "sdk": "org.freedesktop.Sdk",
     "finish-args": [
         "--device=dri",
@@ -18,7 +18,8 @@
         "/lib/pkgconfig",
         "/share/aclocal",
         "/share/man",
-        "*.la", "*.a"
+        "*.la",
+        "*.a"
     ],
     "modules": [
         "shared-modules/SDL/SDL-1.2.15.json",
@@ -34,19 +35,12 @@
                 },
                 {
                     "type": "patch",
-                    "path": "Ri-li-2.0.1-build-fix.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "Ri-li-gcc11.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "Ri-li-2.0.1-gcc43.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "Ri-li-xdg-config-home.patch"
+                    "paths": [
+                      "patches/Ri-li-2.0.1-build-fix.patch",
+                      "patches/Ri-li-gcc11.patch",
+                      "patches/Ri-li-2.0.1-gcc43.patch",
+                      "patches/Ri-li-xdg-config-home.patch"
+                    ]
                 },
                 {
                     "type": "file",
@@ -58,28 +52,23 @@
                 },
                 {
                     "type": "file",
-                    "path": "ri-li-64.png"
+                    "path": "ri-li-128.png"
                 },
                 {
                     "type": "file",
-                    "path": "ri-li-128.png"
+                    "path": "ri-li-256.png"
+                },
+                {
+                    "type": "file",
+                    "path": "ri-li-512.png"
                 }
             ],
             "post-install": [
-                "mkdir -p /app/share/appdata",
-                "cp Ri-li.appdata.xml /app/share/appdata",
-                "mkdir -p /app/share/applications",
-                "cp Ri-li.desktop /app/share/applications",
-                "mkdir -p /app/share/icons/hicolor/16x16/apps",
-                "cp data/Ri-li-icon-16x16.png /app/share/icons/hicolor/16x16/apps/Ri-li.png",
-                "mkdir -p /app/share/icons/hicolor/32x32/apps",
-                "cp data/Ri-li-icon-32x32.png /app/share/icons/hicolor/32x32/apps/Ri-li.png",
-                "mkdir -p /app/share/icons/hicolor/48x48/apps",
-                "cp data/Ri-li-icon-48x48.png /app/share/icons/hicolor/48x48/apps/Ri-li.png",
-                "mkdir -p /app/share/icons/hicolor/64x64/apps",
-                "cp ri-li-64.png /app/share/icons/hicolor/64x64/apps/Ri-li.png",
-                "mkdir -p /app/share/icons/hicolor/128x128/apps",
-                "cp ri-li-128.png /app/share/icons/hicolor/128x128/apps/Ri-li.png"
+                "install -Dm644 Ri-li.appdata.xml -t /app/share/metainfo",
+                "install -Dm644 Ri-li.desktop -t /app/share/applications/",
+                "install -Dm644 ri-li-128.png /app/share/icons/hicolor/128x128/apps/Ri-li.png",
+                "install -Dm644 ri-li-256.png /app/share/icons/hicolor/256x256/apps/Ri-li.png",
+                "install -Dm644 ri-li-512.png /app/share/icons/hicolor/512x512/apps/Ri-li.png"
             ]
         }
     ]
