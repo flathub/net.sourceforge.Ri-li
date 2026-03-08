@@ -26,18 +26,23 @@
   <screenshots>
     <screenshot type="default">
       <image>https://ri-li.sourceforge.net/images/screenshot3.jpg</image>
+      <caption>In-game screenshot</caption>
     </screenshot>
     <screenshot>
       <image>https://ri-li.sourceforge.net/images/screenshot2.jpg</image>
+      <caption>Main menu</caption>
     </screenshot>
     <screenshot>
       <image>https://ri-li.sourceforge.net/images/screenshot4.jpg</image>
+      <caption>In-game screenshot, Arabic</caption>
     </screenshot>
     <screenshot>
       <image>https://ri-li.sourceforge.net/images/screenshot5.jpg</image>
+      <caption>In-game screenshot, Deutsch</caption>
     </screenshot>
     <screenshot>
       <image>https://ri-li.sourceforge.net/images/screenshot1.jpg</image>
+      <caption>Language selection</caption>
     </screenshot>
   </screenshots>
   <update_contact>jwrdegoede_at_fedoraproject.org</update_contact>
